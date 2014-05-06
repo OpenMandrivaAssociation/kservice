@@ -18,6 +18,7 @@ BuildRequires: cmake(KF5Config)
 BuildRequires: cmake(KF5CoreAddons)
 BuildRequires: cmake(KF5DBusAddons)
 BuildRequires: cmake(KF5I18n)
+BuildRequires: cmake(KF5DocTools)
 BuildRequires: extra-cmake-modules5
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5DBus)
