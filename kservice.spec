@@ -4,7 +4,7 @@
 %define debug_package %{nil}
 
 Name: kservice
-Version: 4.98.0
+Version: 4.99.0
 Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/unstable/frameworks/%{version}/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 Service handling framework
@@ -62,7 +62,7 @@ rm -rf %{buildroot}%{_sysconfdir}/xdg
 
 %files
 %{_bindir}/*
-%{_datadir}/kde%{major}
+%{_datadir}/kservicetypes%{major}
 %{_mandir}/man8/*
 
 %files -n %{libname}
