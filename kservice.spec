@@ -4,9 +4,9 @@
 %define debug_package %{nil}
 
 Name: kservice
-Version: 4.99.0
-Release: 2
-Source0: http://ftp5.gwdg.de/pub/linux/kde/unstable/frameworks/%{version}/%{name}-%{version}.tar.xz
+Version: 5.0.0
+Release: 1
+Source0: http://ftp5.gwdg.de/pub/linux/kde/stable/frameworks/%{version}/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 Service handling framework
 URL: http://kde.org/
 License: LGPL v2.1
@@ -60,7 +60,9 @@ mv %{buildroot}%{_prefix}/mkspecs %{buildroot}%{_libdir}/qt5
 # FIXME sync any modifications from kservice there
 rm -rf %{buildroot}%{_sysconfdir}/xdg
 
-%files
+%find_lang kservice5
+
+%files -f kservice5.lang
 %{_bindir}/*
 %{_datadir}/kservicetypes%{major}
 %{_mandir}/man8/*
