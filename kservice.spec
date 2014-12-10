@@ -14,6 +14,7 @@ License: LGPL v2.1
 Group: System/Libraries
 BuildRequires: qmake5
 BuildRequires: cmake
+BuildRequires: ninja
 BuildRequires: cmake(KF5Crash)
 BuildRequires: cmake(KF5Config)
 BuildRequires: cmake(KF5CoreAddons)
@@ -47,15 +48,14 @@ Development files (Headers etc.) for %{name}.
 %prep
 %setup -q
 %apply_patches
-%cmake
+%cmake -G Ninja \
+	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %build
-%make -C build
+ninja -C build
 
 %install
-%makeinstall_std -C build
-mkdir -p %{buildroot}%{_libdir}/qt5
-mv %{buildroot}%{_prefix}/mkspecs %{buildroot}%{_libdir}/qt5
+DESTDIR="%{buildroot}" ninja install -C build
 
 # We get %{_sysconfdir}/xdg/menus/applications.menu from desktop-common-data for now
 # FIXME sync any modifications from kservice there
