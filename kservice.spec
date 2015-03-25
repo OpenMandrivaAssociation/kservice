@@ -24,6 +24,7 @@ BuildRequires: cmake(KF5DocTools)
 BuildRequires: extra-cmake-modules5
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5DBus)
+BuildRequires: pkgconfig(Qt5Test)
 Requires: %{libname} = %{EVRD}
 
 %description
