@@ -64,11 +64,13 @@ rm -rf %{buildroot}%{_sysconfdir}/xdg
 %{_bindir}/*
 %{_datadir}/kservicetypes%{major}
 %{_mandir}/man8/*
+%lang(ca) %{_mandir}/ca/man8/*
 %lang(it) %{_mandir}/it/man8/*
 %lang(nl) %{_mandir}/nl/man8/*
 %lang(pt_BR) %{_mandir}/pt_BR/man8/*
 %lang(sv) %{_mandir}/sv/man8/*
 %lang(uk) %{_mandir}/uk/man8/*
+
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}
