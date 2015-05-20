@@ -6,12 +6,13 @@
 
 Name: kservice
 Version: 5.10.0
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 Service handling framework
 URL: http://kde.org/
 License: LGPL v2.1
 Group: System/Libraries
+Patch0: kservice-5.9.0-kde-menu.patch
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(KF5Crash)
 BuildRequires: cmake(KF5Config)
@@ -56,12 +57,14 @@ Development files (Headers etc.) for %{name}.
 
 # We get %{_sysconfdir}/xdg/menus/applications.menu from desktop-common-data for now
 # FIXME sync any modifications from kservice there
-rm -rf %{buildroot}%{_sysconfdir}/xdg
+#rm -rf %{buildroot}%{_sysconfdir}/xdg
 
 %find_lang kservice5
 
 %files -f kservice5.lang
 %{_bindir}/*
+# Never used (we use /etc/xdg/menus/kde-applications.menu) but let's keep it
+%{_sysconfdir}/xdg/kde5/menus/applications.menu
 %{_datadir}/kservicetypes%{major}
 %{_mandir}/man8/*
 %lang(ca) %{_mandir}/ca/man8/*
