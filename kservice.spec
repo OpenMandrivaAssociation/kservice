@@ -77,7 +77,7 @@ Development files (Headers etc.) for %{name}.
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}
-%{_libdir}/*.so.%{version}
+%{_libdir}/*.so.%{stable}*
 
 %files -n %{devname}
 %{_includedir}/*
