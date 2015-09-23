@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kservice-5.13.0.tar.xz: 7a8e850dcc9e2122279066a8c8765602ebcd8fba
+sources:
+  kservice-5.14.3.tar.xz: 700123f89993a3696224bddd538408bbabfa677f

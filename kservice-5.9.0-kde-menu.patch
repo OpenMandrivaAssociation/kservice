@@ -12,13 +12,13 @@ diff -urN kservice-5.9.0/src/kbuildsycoca/kbuildsycoca.cpp kservice-5.9.0-patche
 --- kservice-5.9.0/src/kbuildsycoca/kbuildsycoca.cpp	2015-04-04 22:12:17.000000000 +1000
 +++ kservice-5.9.0-patched/src/kbuildsycoca/kbuildsycoca.cpp	2015-05-08 17:45:38.232101748 +1000
 @@ -307,7 +307,7 @@
-             g_vfolder->setTrackId(m_trackId);
+             m_vfolder->setTrackId(m_trackId);
          }
  
--        VFolderMenu::SubMenu *kdeMenu = g_vfolder->parseMenu(QStringLiteral("applications.menu"));
-+        VFolderMenu::SubMenu *kdeMenu = g_vfolder->parseMenu(QStringLiteral("kde-applications.menu"));
+-        VFolderMenu::SubMenu *kdeMenu = m_vfolder->parseMenu(QStringLiteral("applications.menu"));
++        VFolderMenu::SubMenu *kdeMenu = m_vfolder->parseMenu(QStringLiteral("kde-applications.menu"));
  
-         KServiceGroup::Ptr entry = g_buildServiceGroupFactory->addNew(QStringLiteral("/"), kdeMenu->directoryFile, KServiceGroup::Ptr(), false);
+         KServiceGroup::Ptr entry = m_buildServiceGroupFactory->addNew(QStringLiteral("/"), kdeMenu->directoryFile, KServiceGroup::Ptr(), false);
          entry->setLayoutInfo(kdeMenu->layoutList);
 diff -urN kservice-5.9.0/src/kbuildsycoca/vfolder_menu.cpp kservice-5.9.0-patched/src/kbuildsycoca/vfolder_menu.cpp
 --- kservice-5.9.0/src/kbuildsycoca/vfolder_menu.cpp	2015-04-04 22:12:17.000000000 +1000
