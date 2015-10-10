@@ -1,0 +1,28 @@
+--- kservice-5.15.0/src/CMakeLists.txt.omv~	2015-10-10 18:33:46.193272993 +0200
++++ kservice-5.15.0/src/CMakeLists.txt	2015-10-10 18:33:55.418257495 +0200
+@@ -137,7 +137,7 @@ install(FILES
+ if (WIN32)
+ install( FILES applications.menu  DESTINATION  ${KDE_INSTALL_DATAROOTDIR}/xdg/menus  RENAME ${APPLICATIONS_MENU_NAME} )
+ else ()
+-install( FILES applications.menu  DESTINATION  ${KDE_INSTALL_SYSCONFDIR}/xdg/menus  RENAME ${APPLICATIONS_MENU_NAME} )
++install( FILES applications.menu  DESTINATION  ${KDE_INSTALL_SYSCONFDIR}/xdg/kde5/menus  RENAME ${APPLICATIONS_MENU_NAME} )
+ endif ()
+ 
+ install(TARGETS KF5Service EXPORT KF5ServiceTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+--- kservice-5.15.0/src/sycoca/vfolder_menu.cpp.omv~	2015-10-10 18:34:24.584208779 +0200
++++ kservice-5.15.0/src/sycoca/vfolder_menu.cpp	2015-10-10 18:36:09.242037194 +0200
+@@ -739,8 +739,13 @@ VFolderMenu::locateMenuFile(const QStrin
+     }
+ 
+     QString result;
++    QString xdgMenuPrefix;
++
++    if(qEnvironmentVariableIsSet("XDG_MENU_PREFIX"))
++        xdgMenuPrefix = QString::fromLocal8Bit("kde-");
++    else
++        xdgMenuPrefix = QString::fromLocal8Bit(qgetenv("XDG_MENU_PREFIX"));
+ 
+-    QString xdgMenuPrefix = QString::fromLocal8Bit(qgetenv("XDG_MENU_PREFIX"));
+     if (!xdgMenuPrefix.isEmpty()) {
+         QFileInfo fileInfo(fileName);
+ 

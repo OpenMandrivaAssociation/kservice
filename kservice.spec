@@ -5,14 +5,14 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kservice
-Version:	5.14.3
+Version:	5.15.0
 Release:	1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 Service handling framework
 URL: http://kde.org/
 License: LGPL v2.1
 Group: System/Libraries
-Patch0: kservice-5.9.0-kde-menu.patch
+Patch0: kservice-5.15.0-kde-menu.patch
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(KF5Crash)
 BuildRequires: cmake(KF5Config)
@@ -47,7 +47,8 @@ Development files (Headers etc.) for %{name}.
 %prep
 %setup -q
 %apply_patches
-%cmake_kde5
+%cmake_kde5 \
+	-DAPPLICATIONS_MENU_NAME:STRING=kde-applications.menu
 
 %build
 %ninja -C build
@@ -64,7 +65,7 @@ Development files (Headers etc.) for %{name}.
 %files -f kservice5.lang
 %{_bindir}/*
 # Never used (we use /etc/xdg/menus/kde-applications.menu) but let's keep it
-%{_sysconfdir}/xdg/kde5/menus/applications.menu
+%{_sysconfdir}/xdg/kde5/menus/kde-applications.menu
 %{_datadir}/kservicetypes%{major}
 %{_mandir}/man8/*
 %lang(ca) %{_mandir}/ca/man8/*
