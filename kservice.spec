@@ -23,6 +23,7 @@ BuildRequires: cmake(KF5DocTools)
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5DBus)
 BuildRequires: pkgconfig(Qt5Test)
+BuildRequires: cmake(Qt5Concurrent)
 Requires: %{libname} = %{EVRD}
 
 %description
