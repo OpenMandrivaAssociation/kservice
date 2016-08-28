@@ -13,6 +13,7 @@ URL: http://kde.org/
 License: LGPL v2.1
 Group: System/Libraries
 Patch0: kservice-5.15.0-kde-menu.patch
+BuildRequires: flex
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(KF5Crash)
 BuildRequires: cmake(KF5Config)
