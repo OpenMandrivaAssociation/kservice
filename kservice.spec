@@ -5,7 +5,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kservice
-Version:	5.27.0
+Version:	5.28.0
 Release:	1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 Service handling framework
@@ -73,6 +73,7 @@ Development files (Headers etc.) for %{name}.
 %{_mandir}/man8/*
 %lang(ca) %{_mandir}/ca/man8/*
 %lang(de) %{_mandir}/de/man8/*
+%lang(es) %{_mandir}/es/man8/*
 %lang(it) %{_mandir}/it/man8/*
 %lang(nl) %{_mandir}/nl/man8/*
 %lang(pt_BR) %{_mandir}/pt_BR/man8/*
