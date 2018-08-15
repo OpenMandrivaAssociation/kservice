@@ -57,7 +57,10 @@ Development files (Headers etc.) for %{name}.
 	-DAPPLICATIONS_MENU_NAME:STRING=kde-applications.menu
 
 %build
-%ninja -C build
+if ! %ninja -C build; then
+	ninja -d explain -C build
+	exit 1
+fi
 
 %install
 %ninja_install -C build
