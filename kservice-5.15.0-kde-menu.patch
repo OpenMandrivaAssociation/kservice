@@ -1,6 +1,7 @@
---- kservice-5.15.0/src/CMakeLists.txt.omv~	2015-10-10 18:33:46.193272993 +0200
-+++ kservice-5.15.0/src/CMakeLists.txt	2015-10-10 18:33:55.418257495 +0200
-@@ -137,7 +137,7 @@ install(FILES
+diff -up kservice-5.50.0/src/CMakeLists.txt.0000~ kservice-5.50.0/src/CMakeLists.txt
+--- kservice-5.50.0/src/CMakeLists.txt.0000~	2018-09-03 13:45:58.030908859 +0200
++++ kservice-5.50.0/src/CMakeLists.txt	2018-09-03 13:46:30.413484388 +0200
+@@ -159,7 +159,7 @@ add_dependencies(KF5Service copy_service
  if (WIN32)
  install( FILES applications.menu  DESTINATION  ${KDE_INSTALL_DATAROOTDIR}/xdg/menus  RENAME ${APPLICATIONS_MENU_NAME} )
  else ()
@@ -8,9 +9,10 @@
 +install( FILES applications.menu  DESTINATION  ${KDE_INSTALL_SYSCONFDIR}/xdg/kde5/menus  RENAME ${APPLICATIONS_MENU_NAME} )
  endif ()
  
- install(TARGETS KF5Service EXPORT KF5ServiceTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
---- kservice-5.15.0/src/sycoca/vfolder_menu.cpp.omv~	2015-10-10 18:34:24.584208779 +0200
-+++ kservice-5.15.0/src/sycoca/vfolder_menu.cpp	2015-10-10 18:36:09.242037194 +0200
+ # Local copy for the unittests
+diff -up kservice-5.50.0/src/sycoca/vfolder_menu.cpp.0000~ kservice-5.50.0/src/sycoca/vfolder_menu.cpp
+--- kservice-5.50.0/src/sycoca/vfolder_menu.cpp.0000~	2018-09-02 21:32:29.000000000 +0200
++++ kservice-5.50.0/src/sycoca/vfolder_menu.cpp	2018-09-03 13:45:58.030908859 +0200
 @@ -739,8 +739,13 @@ VFolderMenu::locateMenuFile(const QStrin
      }
  
