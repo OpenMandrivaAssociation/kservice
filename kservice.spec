@@ -31,6 +31,7 @@ BuildRequires: kdoctools >= %{version}
 # For test
 BuildRequires: appstream
 # For QCH format docs
+BuildRequires: doxygen
 BuildRequires: qt5-assistant
 Requires: %{libname} = %{EVRD}
 
