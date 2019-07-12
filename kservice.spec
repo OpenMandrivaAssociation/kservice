@@ -5,7 +5,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kservice
-Version:	5.59.0
+Version:	5.60.0
 Release:	1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 Service handling framework
@@ -87,7 +87,7 @@ fi
 %{_bindir}/*
 # Never used (we use /etc/xdg/menus/kde-applications.menu) but let's keep it
 %{_sysconfdir}/xdg/kde5/menus/kde-applications.menu
-%{_sysconfdir}/xdg/kservice.categories
+%{_datadir}/qlogging-categories5/kservice.categories
 %{_datadir}/kservicetypes%{major}
 %{_mandir}/man8/*
 
